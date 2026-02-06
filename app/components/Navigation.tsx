@@ -25,7 +25,7 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      <div className="w-full px-12 pt-6 pb-4">
+      <div className="w-full px-4 sm:px-8 md:px-12 pt-4 sm:pt-5 md:pt-6 pb-3 sm:pb-4">
         <div className="flex items-center justify-between">
           <a href="#hero" onClick={handleLogoClick} className="flex items-center cursor-pointer">
             <Image
@@ -33,10 +33,10 @@ export default function Navigation() {
               alt="Dianne Woods"
               width={200}
               height={60}
-              className="h-12 w-auto"
+              className="h-8 sm:h-10 md:h-12 w-auto"
             />
           </a>
-          <div className="flex gap-12 text-base tracking-widest uppercase text-white">
+          <div className="flex gap-4 sm:gap-8 md:gap-12 text-xs sm:text-sm md:text-base tracking-wider md:tracking-widest uppercase text-white">
             <a 
               href="#portfolio" 
               onClick={(e) => handleSmoothScroll(e, '#portfolio')}
