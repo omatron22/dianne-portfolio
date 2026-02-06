@@ -100,9 +100,9 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-10">
             <p className="text-white text-lg mb-8 tracking-wide">
-              Collaborative photography books created with Ken Owen
+              Collaborative photography books created with poet, Ken Owen
             </p>
             <a
               href="http://bit.ly/3UEy2LV"
@@ -118,7 +118,7 @@ export default function Home() {
 
       {/* Statement Section */}
       <section id="statement" className="min-h-screen bg-black">
-        <div className="max-w-4xl mx-auto px-12 pt-32 pb-24">
+        <div className="max-w-4xl mx-auto px-12 pt-20 pb-24">
           <div className="text-white space-y-6 leading-relaxed text-lg">
             <p>
               After many years working as a commercial photographer, I now value the freedom 
@@ -180,6 +180,21 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* Footer / Contact */}
+<footer className="bg-black">
+  <div className="max-w-4xl mx-auto px-6 py-6 text-center text-sm text-neutral-400">
+    <p>
+      <a
+        href="mailto:dpwoods@earthlink.net"
+        className="underline hover:text-white transition-colors"
+      >
+        dpwoods@earthlink.net
+      </a>
+    </p>
+  </div>
+</footer>
+
     </>
   );
 }
