@@ -190,7 +190,7 @@ export default function Home() {
               href="mailto:dpwoods@earthlink.net"
               className="underline hover:text-white transition-colors"
             >
-              dpwoods@earthlink.net
+              diannepwoods@gmail.com
             </a>
           </p>
         </div>
