@@ -24,6 +24,8 @@ const images = [
   'image13.jpg',
   'image10.jpg',
   'image17.jpg',
+    'image20.jpg',
+
 ];
 
 const books = [
