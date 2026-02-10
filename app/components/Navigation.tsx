@@ -42,7 +42,7 @@ export default function Navigation() {
               onClick={(e) => handleSmoothScroll(e, '#portfolio')}
               className="hover:opacity-60 transition-opacity cursor-pointer"
             >
-              Portfolio
+              Gallery
             </a>
             <a 
               href="#books" 
