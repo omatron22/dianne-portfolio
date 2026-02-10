@@ -18,7 +18,7 @@ export default function Navigation() {
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: targetId === '#portfolio' ? 'center' : 'start'
       });
     }
   };

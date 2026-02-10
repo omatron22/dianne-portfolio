@@ -62,7 +62,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="min-h-screen bg-black">
+      <section id="portfolio" className="min-h-screen bg-black pb-48">
         <div className="columns-2 md:columns-3 lg:columns-4 gap-0">
           {images.map((image) => (
             <button
@@ -84,8 +84,8 @@ export default function Home() {
       </section>
 
       {/* Books Section */}
-      <section id="books" className="min-h-screen bg-black">
-        <div className="max-w-7xl mx-auto px-12 pt-32 pb-24">
+      <section id="books" className="min-h-screen bg-black pt-12 pb-48">
+        <div className="max-w-7xl mx-auto px-12 pb-24">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {books.map((book) => (
               <div key={book.title} className="flex flex-col">
@@ -118,8 +118,8 @@ export default function Home() {
       </section>
 
       {/* Statement Section */}
-      <section id="statement" className="min-h-screen bg-black">
-        <div className="max-w-4xl mx-auto px-12 pt-20 pb-24">
+      <section id="statement" className="min-h-screen bg-black pt-12">
+        <div className="max-w-4xl mx-auto px-12 pb-24">
           <div className="text-white space-y-6 leading-relaxed text-lg">
             <p>
               After many years working as a commercial photographer, I now value the freedom 
@@ -183,19 +183,18 @@ export default function Home() {
       )}
 
       {/* Footer / Contact */}
-<footer className="bg-black">
-  <div className="max-w-4xl mx-auto px-6 py-6 text-center text-sm text-neutral-400">
-    <p>
-      <a
-        href="mailto:dpwoods@earthlink.net"
-        className="underline hover:text-white transition-colors"
-      >
-        dpwoods@earthlink.net
-      </a>
-    </p>
-  </div>
-</footer>
-
+      <footer className="bg-black">
+        <div className="max-w-4xl mx-auto px-6 py-6 text-center text-sm text-neutral-400">
+          <p>
+            <a
+              href="mailto:dpwoods@earthlink.net"
+              className="underline hover:text-white transition-colors"
+            >
+              dpwoods@earthlink.net
+            </a>
+          </p>
+        </div>
+      </footer>
     </>
   );
 }
