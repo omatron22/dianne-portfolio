@@ -51,12 +51,18 @@ export default function Navigation() {
             >
               Books
             </a>
-            <a 
-              href="#statement" 
-              onClick={(e) => handleSmoothScroll(e, '#statement')}
+            <a
+              href="#bio"
+              onClick={(e) => handleSmoothScroll(e, '#bio')}
               className="hover:opacity-60 transition-opacity cursor-pointer"
             >
-              Statement
+              Bio
+            </a>
+            <a
+              href="mailto:diannepwoods@gmail.com"
+              className="hover:opacity-60 transition-opacity cursor-pointer"
+            >
+              Contact
             </a>
           </div>
         </div>

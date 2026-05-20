@@ -117,38 +117,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Statement Section */}
-      <section id="statement" className="min-h-screen bg-black pt-12">
+      {/* Bio Section */}
+      <section id="bio" className="min-h-screen bg-black pt-12">
         <div className="max-w-4xl mx-auto px-12 pb-24">
           <div className="text-white space-y-6 leading-relaxed text-lg">
             <p>
-              After many years working as a commercial photographer, I now value the freedom 
-              to work without expectation. Since I no longer photograph for assignment or 
-              outcome, what remains is a quieter practice—one shaped by time, familiarity, and 
-              the pleasure of sustained looking. The camera has become a way of keeping 
-              company with the world rather than describing it.
-            </p>
-
-            <p>
-              The images I make now are rooted in ordinary encounters: a pair of figures resting 
-              at the edge of a landscape, an animal half-present and half-withheld, a moment of 
-              private concentration. I am drawn to what reveals itself slowly, often with a trace 
-              of humor or tenderness. These photographs are less about subject matter than about 
-              attention—about staying with a scene long enough for it to become itself. Age, 
-              memory, and the passage of time hover in these images, not as themes to be 
-              declared, but as conditions quietly felt.
-            </p>
-
-            <p>
-              My recent collaborative books with poet Ken Owen grow out of this sensibility. 
-              Together, we explore how photographs and poems can coexist without explanation—each 
-              leaving space for the other, and for the reader. The photographs I contribute 
-              are made with that same openness, inviting reflection rather than resolution.
-            </p>
-
-            <p>
-              At this stage of my life, photography is not about accumulation or ambition. It is an 
-              act of noticing, a way of remaining present.
+              I grew up in Los Angeles and graduated from Art Center College of Design in 1977.
+              After 40 years as a commercial photographer working with advertising agencies,
+              design groups, book publishers, and magazines, I&rsquo;m now retired and have turned
+              my attention toward fine art photography, with a particular interest in performers,
+              gardens and landscapes, and still life. I&rsquo;m interested in moments observed
+              rather than arranged, and in details that often go unnoticed.
             </p>
 
             <p className="pt-4 italic">
@@ -187,7 +166,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 py-6 text-center text-sm text-neutral-400">
           <p>
             <a
-              href="mailto:dpwoods@earthlink.net"
+              href="mailto:diannepwoods@gmail.com"
               className="underline hover:text-white transition-colors"
             >
               diannepwoods@gmail.com
