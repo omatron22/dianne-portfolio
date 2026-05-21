@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Navigation() {
@@ -24,7 +23,13 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{
+        background:
+          'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 100%)',
+      }}
+    >
       <div className="w-full px-4 sm:px-8 md:px-12 pt-4 sm:pt-5 md:pt-6 pb-3 sm:pb-4">
         <div className="flex items-center justify-between">
           <a href="#hero" onClick={handleLogoClick} className="flex items-center cursor-pointer">

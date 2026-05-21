@@ -1,99 +1,56 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
 import Navigation from './components/Navigation';
+import Gallery, { type Photo } from './components/Gallery';
+import photoData from './photos.json';
 
-const images = [
-  'image12.jpg',
-  'image7.jpg',
-  'image3.jpg',
-  'image15.jpg',
-  'image9.jpg',
-  'image1.jpg',
-  'image18.jpg',
-  'image5.jpg',
-  'image14.jpg',
-  'image11.jpg',
-  'image6.jpg',
-  'image19.jpg',
-  'image2.jpg',
-  'image8.jpg',
-  'image16.jpg',
-  'image4.jpg',
-  'image13.jpg',
-  'image10.jpg',
-  'image17.jpg',
-  'image20.jpg',
-];
+const photos: Photo[] = photoData.photos;
 
 const books = [
-  {
-    title: 'Departure',
-    image: '/books/Departure.jpg',
-  },
-  {
-    title: 'Pairings',
-    image: '/books/Pairings.jpg',
-  },
-  {
-    title: 'Resonance',
-    image: '/books/Resonance.jpg',
-  },
+  { title: 'Departure', image: '/books/Departure.jpg' },
+  { title: 'Pairings', image: '/books/Pairings.jpg' },
+  { title: 'Resonance', image: '/books/Resonance.jpg' },
 ];
 
-export default function Home() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+const BOOKS_URL =
+  'https://www.lulu.com/search?contributor=Dianne+Woods&q=Resonance%2C+Pairings%2C+Departure%2C+Dianne+Woods%2C+Ken+Owen';
 
+export default function Home() {
   return (
     <>
       <Navigation />
-      
+
       {/* Hero Section */}
       <section id="hero" className="relative h-screen w-full">
         <Image
-          src="/images/image1.jpg"
-          alt="Dianne Woods Photography"
+          src="/images/_DSF0286-03-150.jpg"
+          alt="Photograph by Dianne Woods"
           fill
           className="object-cover"
-          priority
+          loading="eager"
+          fetchPriority="high"
           sizes="100vw"
         />
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="min-h-screen bg-black pb-48">
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-0">
-          {images.map((image) => (
-            <button
-              key={image}
-              onClick={() => setSelectedImage(image)}
-              className="relative w-full mb-0 overflow-hidden hover:opacity-80 transition-opacity cursor-pointer block"
-            >
-              <Image
-                src={`/images/${image}`}
-                alt={image}
-                width={800}
-                height={800}
-                className="w-full h-auto"
-                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-              />
-            </button>
-          ))}
-        </div>
+      <section id="portfolio" className="bg-black">
+        <Gallery photos={photos} />
       </section>
 
-      {/* Books Section */}
-      <section id="books" className="min-h-screen bg-black pt-12 pb-48">
-        <div className="max-w-7xl mx-auto px-12 pb-24">
+      {/* Books Section — full viewport so nav-click centers cleanly */}
+      <section
+        id="books"
+        className="min-h-screen bg-black flex items-center justify-center px-6"
+      >
+        <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {books.map((book) => (
               <div key={book.title} className="flex flex-col">
                 <Image
                   src={book.image}
                   alt={book.title}
-                  width={800}
-                  height={1000}
+                  width={1224}
+                  height={1224}
                   className="w-full h-auto"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
@@ -106,7 +63,7 @@ export default function Home() {
               Collaborative photography books created with poet, Ken Owen
             </p>
             <a
-              href="http://bit.ly/3UEy2LV"
+              href={BOOKS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-10 py-4 border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 tracking-wider text-sm uppercase"
@@ -117,9 +74,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Bio Section */}
-      <section id="bio" className="min-h-screen bg-black pt-12">
-        <div className="max-w-4xl mx-auto px-12 pb-24">
+      {/* Bio Section — full viewport so nav-click centers cleanly */}
+      <section
+        id="bio"
+        className="min-h-screen bg-black flex items-center justify-center px-6"
+      >
+        <div className="w-full max-w-4xl mx-auto">
           <div className="text-white space-y-6 leading-relaxed text-lg">
             <p>
               I grew up in Los Angeles and graduated from Art Center College of Design in 1977.
@@ -136,30 +96,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Lightbox Modal */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <button
-            className="absolute top-4 right-4 text-white text-4xl hover:text-gray-300"
-            onClick={() => setSelectedImage(null)}
-          >
-            ×
-          </button>
-          <div className="relative w-full h-full max-w-5xl max-h-[90vh]">
-            <Image
-              src={`/images/${selectedImage}`}
-              alt={selectedImage}
-              fill
-              className="object-contain"
-              sizes="90vw"
-            />
-          </div>
-        </div>
-      )}
 
       {/* Footer / Contact */}
       <footer className="bg-black">
