@@ -20,7 +20,7 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section id="hero" className="relative h-screen w-full">
+      <section id="hero" className="relative h-[100svh] w-full">
         <Image
           src="/images/_DSF0286-03-150.jpg"
           alt="Photograph by Dianne Woods"
@@ -40,10 +40,10 @@ export default function Home() {
       {/* Books Section — full viewport so nav-click centers cleanly */}
       <section
         id="books"
-        className="min-h-screen bg-black flex items-center justify-center px-6"
+        className="min-h-screen bg-black flex items-center justify-center px-3 sm:px-6"
       >
         <div className="w-full max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+          <div className="grid grid-cols-3 gap-0">
             {books.map((book) => (
               <div key={book.title} className="flex flex-col">
                 <Image
@@ -52,23 +52,27 @@ export default function Home() {
                   width={1224}
                   height={1224}
                   className="w-full h-auto"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="33vw"
                 />
               </div>
             ))}
           </div>
 
           <div className="text-center mt-10">
-            <p className="text-white text-lg mb-8 tracking-wide">
+            <p
+              className="text-white text-xl mb-8"
+              style={{ fontFamily: 'var(--font-serif), Georgia, serif' }}
+            >
               Collaborative photography books created with poet, Ken Owen
             </p>
             <a
               href={BOOKS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-10 py-4 border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 tracking-wider text-sm uppercase"
+              className="inline-block text-white text-lg italic underline decoration-neutral-500 underline-offset-4 hover:decoration-white transition-colors"
+              style={{ fontFamily: 'var(--font-serif), Georgia, serif' }}
             >
-              Purchase Books
+              Purchase the books
             </a>
           </div>
         </div>
@@ -79,8 +83,11 @@ export default function Home() {
         id="bio"
         className="min-h-screen bg-black flex items-center justify-center px-6"
       >
-        <div className="w-full max-w-4xl mx-auto">
-          <div className="text-white space-y-6 leading-relaxed text-lg">
+        <div
+          className="w-full max-w-4xl mx-auto"
+          style={{ fontFamily: 'var(--font-serif), Georgia, serif' }}
+        >
+          <div className="text-white space-y-6 leading-relaxed text-lg sm:text-xl">
             <p>
               I grew up in Los Angeles and graduated from Art Center College of Design in 1977.
               After 40 years as a commercial photographer working with advertising agencies,

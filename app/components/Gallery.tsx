@@ -85,26 +85,29 @@ export default function Gallery({
   );
 
   const selected = selectedIndex !== null ? photos[selectedIndex] : null;
+  const total = photos.length;
   const close = () => setSelectedIndex(null);
   const next = () =>
-    setSelectedIndex((i) =>
-      i === null ? null : (i + 1) % photos.length
-    );
+    setSelectedIndex((i) => (i === null ? null : (i + 1) % total));
   const prev = () =>
     setSelectedIndex((i) =>
-      i === null ? null : (i - 1 + photos.length) % photos.length
+      i === null ? null : (i - 1 + total) % total
     );
 
   useEffect(() => {
     if (selectedIndex === null) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close();
-      else if (e.key === 'ArrowRight') next();
-      else if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'Escape') setSelectedIndex(null);
+      else if (e.key === 'ArrowRight')
+        setSelectedIndex((i) => (i === null ? null : (i + 1) % total));
+      else if (e.key === 'ArrowLeft')
+        setSelectedIndex((i) =>
+          i === null ? null : (i - 1 + total) % total
+        );
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [selectedIndex]);
+  }, [selectedIndex, total]);
 
   useEffect(() => {
     if (selectedIndex === null) return;

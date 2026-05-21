@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
+import { EB_Garamond, Jost } from "next/font/google";
 import "./globals.css";
+
+const ebGaramond = EB_Garamond({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
+
+const jost = Jost({
+  variable: "--font-ui",
+  weight: ["400", "500"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://diannewoods.com"),
@@ -34,7 +47,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${ebGaramond.variable} ${jost.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
