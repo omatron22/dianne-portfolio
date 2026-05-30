@@ -6,6 +6,7 @@ import Image from 'next/image';
 const NAV_ITEMS: { label: string; target: string; href?: string }[] = [
   { label: 'Gallery', target: '#portfolio' },
   { label: 'Books', target: '#books' },
+  { label: 'Film', target: '#film' },
   { label: 'Bio', target: '#bio' },
   { label: 'Contact', target: '', href: 'mailto:diannepwoods@gmail.com' },
 ];

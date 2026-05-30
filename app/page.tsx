@@ -14,6 +14,9 @@ const books = [
 const BOOKS_URL =
   'https://www.lulu.com/search?contributor=Dianne+Woods&q=Resonance%2C+Pairings%2C+Departure%2C+Dianne+Woods%2C+Ken+Owen';
 
+// Dianne's short film, "One Year Photographing Music".
+const FILM_URL = 'https://www.youtube.com/watch?v=kOs8Pes6K94';
+
 export default function Home() {
   return (
     <>
@@ -76,6 +79,29 @@ export default function Home() {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* Film Section — full viewport so nav-click centers cleanly */}
+      <section
+        id="film"
+        className="min-h-screen bg-black flex items-center justify-center px-6"
+      >
+        <a
+          href={FILM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full max-w-3xl mx-auto group"
+          aria-label="Watch the film: One Year Photographing Music"
+        >
+          <Image
+            src="/film/Title-150.jpg"
+            alt="One Year Photographing Music — a short film"
+            width={1500}
+            height={426}
+            className="w-full h-auto transition-opacity duration-300 group-hover:opacity-80"
+            sizes="(max-width: 768px) 100vw, 768px"
+          />
+        </a>
       </section>
 
       {/* Bio Section — full viewport so nav-click centers cleanly */}
